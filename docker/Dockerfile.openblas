@@ -88,6 +88,11 @@ RUN mkdir build \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=~/open3d_install \
     -DDEVELOPER_BUILD=${DEVELOPER_BUILD} \
+    -DENABLE_HEADLESS_RENDERING=ON \
+    -DBUILD_GUI=OFF \
+    -DBUILD_WEBRTC=OFF \
+    -DUSE_SYSTEM_GLEW=OFF \
+    -DUSE_SYSTEM_GLFW=OFF \
     .. \
  && make -j$(nproc) \
  && make install-pip-package -j$(nproc) \
